@@ -20,17 +20,19 @@ const Header = () => {
 
   return (
     <>
-      {/* TOP HEADER (normal state) */}
+      {/* ================= HEADER ================= */}
       <header className="w-full bg-black text-white">
-        <div className="relative mx-auto w-full max-w-[1400px] px-10 pt-10 pb-6">
+        <div className="relative mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-10 pt-6 md:pt-10 pb-4 md:pb-6">
           {/* Left: Page Title */}
-          <div className="text-[22px] font-light tracking-wide">Contact</div>
+          <div className="text-[16px] sm:text-[18px] md:text-[22px] font-light tracking-wide">
+            Contact
+          </div>
 
           {/* Center: Logo */}
-          <div className="pointer-events-none absolute left-1/2 top-10 -translate-x-1/2">
-            <div className="flex items-center gap-2 text-[10px] tracking-[0.35em] uppercase opacity-80">
+          <div className="pointer-events-none absolute left-1/2 top-6 md:top-10 -translate-x-1/2">
+            <div className="flex items-center gap-2 text-[9px] sm:text-[10px] tracking-[0.35em] uppercase opacity-80">
               <span>Window</span>
-              <span className="font-serif text-[22px] leading-none tracking-normal">
+              <span className="font-serif text-[18px] sm:text-[20px] md:text-[22px] leading-none tracking-normal">
                 WP
               </span>
               <span>Passions</span>
@@ -42,7 +44,7 @@ const Header = () => {
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className="absolute right-10 top-10 flex h-10 w-10 items-center justify-center"
+            className="absolute right-4 sm:right-6 md:right-10 top-5 md:top-10 flex h-10 w-10 items-center justify-center"
           >
             <span className="sr-only">Menu</span>
             <span className="flex flex-col gap-[6px]">
@@ -54,32 +56,34 @@ const Header = () => {
         </div>
       </header>
 
-      {/* FULLSCREEN MENU OVERLAY (like screenshot) */}
+      {/* ================= FULLSCREEN MENU ================= */}
       <div
         className={[
           "fixed inset-0 z-[9999] bg-black text-white transition-opacity duration-300",
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         ].join(" ")}
       >
-        {/* top row */}
-        <div className="relative w-full px-10 pt-10">
-          {/* Left: Logo */}
+        {/* Top row */}
+        <div className="relative w-full px-4 sm:px-6 md:px-10 pt-6 md:pt-10">
+          {/* Logo */}
           <div className="flex items-center gap-3">
-            <span className="text-[10px] tracking-[0.45em] uppercase opacity-80">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.45em] uppercase opacity-80">
               Window
             </span>
-            <span className="font-serif text-[46px] leading-none">WP</span>
-            <span className="text-[10px] tracking-[0.45em] uppercase opacity-80">
+            <span className="font-serif text-[34px] sm:text-[40px] md:text-[46px] leading-none">
+              WP
+            </span>
+            <span className="text-[9px] sm:text-[10px] tracking-[0.45em] uppercase opacity-80">
               Passions
             </span>
           </div>
 
-          {/* Right: Close X */}
+          {/* Close button */}
           <button
             type="button"
             aria-label="Close menu"
             onClick={() => setOpen(false)}
-            className="absolute right-10 top-10 flex h-12 w-12 items-center justify-center"
+            className="absolute right-4 sm:right-6 md:right-10 top-5 md:top-10 flex h-12 w-12 items-center justify-center"
           >
             <span className="sr-only">Close</span>
             <span className="relative block h-6 w-6">
@@ -89,80 +93,49 @@ const Header = () => {
           </button>
         </div>
 
-        {/* menu items */}
-        <nav className="px-10 pt-28">
-          <ul className="space-y-4">
-            <li>
-              <a
-                href="/"
-                className="block text-[44px] font-semibold tracking-wide text-white/25 hover:text-white transition"
-              >
-                HOME
-              </a>
-            </li>
-            <li>
-              <a
-                href="/about"
-                className="block text-[44px] font-semibold tracking-wide hover:text-white transition"
-              >
-                ABOUT
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="block text-[44px] font-semibold tracking-wide hover:text-white transition"
-              >
-                CONTACT
-              </a>
-            </li>
-            <li>
-              <a
-                href="/projects"
-                className="block text-[44px] font-semibold tracking-wide hover:text-white transition"
-              >
-                PROJECTS
-              </a>
-            </li>
-            <li>
-              <a
-                href="/studio"
-                className="block text-[44px] font-semibold tracking-wide hover:text-white transition"
-              >
-                STUDIO
-              </a>
-            </li>
+        {/* Menu items */}
+        <nav className="px-4 sm:px-6 md:px-10 pt-20 md:pt-28">
+          <ul className="space-y-3 md:space-y-4">
+            {["HOME", "ABOUT", "CONTACT", "PROJECTS", "STUDIO"].map((item) => (
+              <li key={item}>
+                <a
+                  href={`/${item.toLowerCase()}`}
+                  className="
+                    block
+                    text-[28px]
+                    sm:text-[36px]
+                    md:text-[44px]
+                    font-semibold
+                    tracking-wide
+                    text-white/25
+                    hover:text-white
+                    transition
+                  "
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
 
-        {/* bottom row */}
-        <div className="absolute bottom-10 left-10 right-10 flex items-center justify-between">
-          <div className="text-[22px] font-semibold">Contact</div>
+        {/* Bottom row */}
+        <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-4 sm:left-6 md:left-10 right-4 sm:right-6 md:right-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">
+            Contact
+          </div>
 
-          {/* social icons (simple text icons like screenshot) */}
-          <div className="flex items-center gap-7 text-[18px] opacity-95">
-            <a href="#" className="hover:opacity-70 transition" aria-label="LinkedIn">
-              in
-            </a>
-            <a href="#" className="hover:opacity-70 transition" aria-label="X">
-              X
-            </a>
-            <a href="#" className="hover:opacity-70 transition" aria-label="YouTube">
-              ▶
-            </a>
-            <a href="#" className="hover:opacity-70 transition" aria-label="Facebook">
-              f
-            </a>
-            <a href="#" className="hover:opacity-70 transition" aria-label="Instagram">
-              ⦿
-            </a>
-            <a href="#" className="hover:opacity-70 transition" aria-label="TikTok">
-              ♪
-            </a>
+          <div className="flex items-center gap-5 sm:gap-7 text-[16px] sm:text-[18px] opacity-95">
+            <a href="#" className="hover:opacity-70 transition">in</a>
+            <a href="#" className="hover:opacity-70 transition">X</a>
+            <a href="#" className="hover:opacity-70 transition">▶</a>
+            <a href="#" className="hover:opacity-70 transition">f</a>
+            <a href="#" className="hover:opacity-70 transition">⦿</a>
+            <a href="#" className="hover:opacity-70 transition">♪</a>
           </div>
         </div>
 
-        {/* click outside to close */}
+        {/* Click outside */}
         <button
           type="button"
           aria-label="Close overlay background"

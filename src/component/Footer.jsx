@@ -21,23 +21,28 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white">
-      {/* Top wordmark */}
-      <div className="relative flex justify-center pt-14 pb-10">
-        
-      </div>
-      
-
       {/* Main footer content */}
-      <div className="px-16 pb-10">
+      <div className="px-6 md:px-16 pb-10">
         <div className="grid grid-cols-12 gap-10 items-start">
-          {/* Left nav */}
+
+          {/* LEFT NAV */}
           <div className="col-span-12 md:col-span-3">
-            <nav className="space-y-1">
+            <nav className="space-y-1 text-center md:text-left">
               {navLinks.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block text-[44px] leading-[1.05] font-semibold text-white/75 hover:text-white transition"
+                  className="
+                    block
+                    text-[28px]
+                    sm:text-[32px]
+                    md:text-[44px]
+                    leading-[1.05]
+                    font-semibold
+                    text-white/75
+                    hover:text-white
+                    transition
+                  "
                 >
                   {item.label}
                 </a>
@@ -45,40 +50,57 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Middle text */}
+          {/* MIDDLE TEXT */}
           <div className="col-span-12 md:col-span-5 md:col-start-5">
-            <p className="max-w-[560px] text-[20px] leading-snug text-white/90">
+            <p className="
+              max-w-[560px]
+              text-[16px]
+              sm:text-[18px]
+              md:text-[20px]
+              leading-snug
+              text-white/90
+              text-center
+              md:text-left
+            ">
               Blending traditional craftsmanship with modern aesthetics to create
               unique window dressings. We redefine elegance with each design,
               integrating luxury with functionality.
             </p>
           </div>
 
-          {/* Right contact */}
-          <div className="col-span-12 md:col-span-3 md:col-start-10 text-right">
-            <div className="text-[18px] leading-snug text-white/90">
+          {/* RIGHT CONTACT */}
+          <div className="col-span-12 md:col-span-3 md:col-start-10">
+            <div className="
+              text-[16px]
+              sm:text-[17px]
+              md:text-[18px]
+              leading-snug
+              text-white/90
+              text-center
+              md:text-right
+            ">
               <p>2nd Floor, 348 D,</p>
               <p>Mehrauli-Gurgaon Rd,</p>
               <p>Sultanpur, New Delhi,</p>
               <p>Delhi 110030</p>
             </div>
 
-            <div className="mt-10 space-y-4">
-              <div className="flex items-center justify-end gap-4">
+            <div className="mt-8 md:mt-10 space-y-4">
+              <div className="flex items-center justify-center md:justify-end gap-4">
                 <Phone className="h-6 w-6 text-white/85" />
                 <a
                   href="tel:+917303660071"
-                  className="text-[22px] text-white/90 hover:text-white transition"
+                  className="text-[18px] sm:text-[20px] md:text-[22px] text-white/90 hover:text-white transition"
                 >
                   +91 73036 60071
                 </a>
               </div>
 
-              <div className="flex items-center justify-end gap-4">
+              <div className="flex items-center justify-center md:justify-end gap-4">
                 <Mail className="h-6 w-6 text-white/85" />
                 <a
                   href="mailto:contact@windowpassions.com"
-                  className="text-[22px] text-white/90 hover:text-white transition"
+                  className="text-[18px] sm:text-[20px] md:text-[22px] text-white/90 hover:text-white transition"
                 >
                   contact@windowpassions.com
                 </a>
@@ -87,21 +109,30 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
+        {/* DIVIDER */}
         <div className="mt-12 border-t border-white/10" />
 
-        {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-8">
-          <div className="text-white/60 text-[16px]">
+        {/* BOTTOM BAR */}
+        <div className="
+          flex
+          flex-col
+          md:flex-row
+          items-center
+          md:items-center
+          justify-between
+          gap-6
+          pt-8
+        ">
+          <div className="text-white/60 text-[14px] sm:text-[15px] md:text-[16px] text-center md:text-left">
             Window Passions © 2025
           </div>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2 justify-start md:justify-end">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center md:justify-end">
             {socialLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-[16px] font-semibold text-white/85 hover:text-white transition"
+                className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold text-white/85 hover:text-white transition"
               >
                 {item.label}
               </a>
@@ -114,4 +145,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

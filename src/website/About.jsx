@@ -29,7 +29,8 @@ const About = () => {
       {/* TEXT (closer to pentagon) */}
       <div className="absolute left-[22%] top-1/2 -translate-y-1/2 text-white/70 font-light leading-tight">
         <div className="italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
-          <span className="not-italic">
+          <span className="not-italic animate-in zoom-in fade-in
+          ">
             About <br /> Us
           </span>
         </div>
