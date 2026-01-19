@@ -1,210 +1,212 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const circles = [
+  { id: 0, label: "Find Us", link: "/find-us" },
+  { id: 1, label: "The Foundation", link: "/foundation" },
+  { id: 2, label: "The Studio", link: "/studio" },
+  { id: 3, label: "Art and Craft", link: "/art-and-craft" },
+];
 
 const Content = () => {
+  const [active, setActive] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const navigate = useNavigate();
 
-  // 🔹 ONE SIMPLE OBSERVER (replays animation)
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0");
-          } else {
-            entry.target.classList.add("opacity-0");
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+  // 🔁 ONLY rotate circles
+  const nextCircle = () => {
+    setActive((prev) => (prev + 1) % circles.length);
+    setRotation((prev) => prev - 90);
+  };
 
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  // 🔗 ONLY navigate on text click
+  const handleTextClick = (link) => {
+    navigate(link);
+  };
 
   return (
-    <>
-      {/* ================= HERO SECTION ================= */}
-      <section className="w-full min-h-screen bg-black flex flex-col items-center justify-center relative px-6">
-        <h1 className="reveal opacity-0 animate-zoom-in delay-2 text-white text-center font-light leading-tight tracking-wide 
-                       text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-5xl">
-          Bespoke by Window <br />
-          Passions, savors the privilege <br />
-          of personalisation, albeit at a <br />
-          marginally higher cost.
-        </h1>
+    <section className="w-full bg-[#f6f1ec] py-16 px-6 md:px-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
 
-        <p className="reveal opacity-0 animate-zoom-in absolute bottom-10 text-xs tracking-[0.25em] text-gray-500 uppercase">
-          A Soft Furnishing Consultancy
-        </p>
-      </section>
-
-      {/* ================= STUDIO VISUAL ================= */}
-      <section className="relative bg-black text-white min-h-screen px-10 py-20">
-        <div className="reveal opacity-0 animate-section delay-5 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          <div className="w-full h-[320px] lg:h-[380px] overflow-hidden">
-            <img
-              src="https://windowpassions.com/wp-content/uploads/2025/01/12.webp"
-              alt="Craftsmanship"
-              className="reveal opacity-0 animate-image-reveal w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="flex justify-end">
-            <img
-              src="https://windowpassions.com/wp-content/uploads/2025/01/3.webp"
-              alt="Technical Drawing"
-              className="reveal opacity-0 animate-fade-right w-[260px] opacity-90"
-            />
-          </div>
-        </div>
-
-        <div className="mt-24 max-w-3xl">
-          <h2 className="reveal opacity-0 animate-fade-up font-light text-3xl sm:text-4xl leading-snug">
-            We blend traditional craftsmanship <br />
-            with modern aesthetics to create <br />
-            unique window dressings.
+        {/* LEFT CONTENT */}
+        <div className="w-full md:w-1/2">
+          <h2 className="text-4xl md:text-5xl font-serif mb-6 text-black">
+            About us
           </h2>
-        </div>
 
-        <div className="absolute bottom-16 right-16">
-          <div className="reveal opacity-0 animate-fade-up w-100 h-100 rounded-full bg-white text-black flex items-center justify-center text-5xl font-light cursor-pointer hover:scale-105 transition">
-            Studio ↗
-          </div>
-        </div>
-      </section>
-
-      {/* ================= PROJECTS VISUAL ================= */}
-      <section className="relative bg-black min-h-screen px-12 py-20 overflow-hidden">
-        <div className="absolute left-6 top-20 w-72 opacity-90">
-          <img
-            src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767775256/4-1_l9bbyy.webp"
-            alt="Curtain Sketch"
-            className="reveal opacity-0 animate-fade-left w-full"
-          />
-        </div>
-
-        <div className="flex justify-center">
-          <img
-            src="https://windowpassions.com/wp-content/uploads/2025/01/Wp-website-elements-05-1536x862.webp"
-            alt="Embroidered Fabric"
-            className="reveal opacity-0 animate-image-reveal w-[70%] max-w-4xl"
-          />
-        </div>
-
-        <div className="absolute top-[35%] left-1/2 -translate-x-1/2">
-          <img
-            src="https://windowpassions.com/wp-content/uploads/2025/01/Wp-website-elements-06.webp"
-            alt="Fabric Detail"
-            className="reveal opacity-0 animate-zoom-in w-[420px]"
-          />
-        </div>
-
-        <div className="absolute left-28 bottom-44">
-          <div className="reveal opacity-0 animate-fade-up w-60 h-60 bg-[#8B4528] rotate-45 flex items-center justify-center cursor-pointer hover:scale-105 transition">
-            <span className="text-white text-4xl font-light -rotate-45">
-              Projects ↗
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= ABOUT US VISUAL ================= */}
-      <section className="relative bg-black min-h-screen flex items-center overflow-hidden px-16">
-        <div className="absolute left-16 top-1/2 -translate-y-1/2">
-          <h1 className="reveal opacity-0 animate-fade-up text-white font-serif text-[260px] leading-none tracking-tight">
-            WP
-          </h1>
-        </div>
-
-        <div className="relative mx-auto flex items-center justify-center">
-          <div className="relative w-[360px] h-[300px] bg-[#4b4b4b] flex items-center justify-center">
-            <div
-              className="absolute -top-[140px] left-0 w-0 h-0
-                         border-l-[180px] border-r-[180px]
-                         border-b-[140px]
-                         border-l-transparent
-                         border-r-transparent
-                         border-b-[#4b4b4b]"
-            />
-            <div className="reveal opacity-0 animate-fade-up absolute text-center text-white/70 font-serif">
-              <div className="text-5xl tracking-[0.25em]">ABOUT</div>
-              <div className="text-4xl italic mt-2">US</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute right-16 top-1/2 -translate-y-1/2">
-          <img
-            src="https://windowpassions.com/wp-content/uploads/2025/01/Wp-website-elements-08-811x1024.webp"
-            className="reveal opacity-0 animate-fade-right w-[320px]"
-            alt="Fabric rolls"
-          />
-        </div>
-      </section>
-
-      {/* ================= METHOD ================= */}
-      <section className="relative bg-black px-16 py-24 overflow-hidden text-white">
-        <div className="flex justify-between items-start mb-24">
-          <div className="reveal opacity-0 animate-fade-up relative flex items-start gap-10">
-            <img
-              src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767775256/3_uxd4fx.webp"
-              alt="Sketch"
-              className="reveal opacity-0 animate-fade-left w-52 opacity-80"
-            />
-            <h1 className="text-7xl font-light tracking-tight">
-              Method ↗
-            </h1>
-          </div>
-
-          <p className="reveal opacity-0 animate-fade-up text-lg font-light tracking-wide">
-            Consult, Concept, Execution, Handover
+          <p className="text-gray-800 leading-relaxed max-w-md">
+            A Top Curtain Fabric Company in India and also Best Curtain shops in
+            Gurgaon & Luxury Curtain stores in Gurgaon. At Zynna, we are
+            passionate about creating elegant window treatments.
           </p>
+
+          <button className="mt-8 bg-black text-white px-8 py-3 text-sm tracking-wider">
+            EXPLORE MORE
+          </button>
         </div>
 
-        <div className="grid grid-cols-2 items-start px-24">
-          <img
-            src="https://windowpassions.com/wp-content/uploads/2025/01/Wp-website-elements-13-1021x1024.webp"
-            className="reveal opacity-0 animate-fade-left w-[340px]"
-            alt=""
-          />
+        {/* RIGHT ROTATING CIRCLES */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <div
+            className="relative w-[420px] h-[420px] transition-transform duration-700 ease-in-out"
+            style={{ transform: `rotate(${rotation}deg)` }}
+          >
+            {circles.map((circle, index) => {
+              const positions = [
+                "top-0 left-1/2 -translate-x-1/2",
+                "right-0 top-1/2 -translate-y-1/2",
+                "bottom-0 left-1/2 -translate-x-1/2",
+                "left-0 top-1/2 -translate-y-1/2",
+              ];
 
-          <img
-            src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767773220/wb1_bwyzyd.webp"
-            className="reveal opacity-0 animate-fade-right w-[560px]"
-            alt=""
-          />
+              const isActive = active === index;
 
-          <img
-            src="https://windowpassions.com/wp-content/uploads/2025/01/Wp-website-elements-11-1024x574.webp"
-            className="reveal opacity-0 animate-image-reveal col-span-1 w-[620px] mt-10"
-            alt=""
-          />
+              return (
+                <div
+                  key={circle.id}
+                  className={`
+                    absolute ${positions[index]}
+                    w-[200px] h-[200px]
+                    rounded-full border-[4px]
+                    flex items-center justify-center
+                    transition-all duration-700
+                    ${isActive ? "border-black scale-105 z-20" : "border-black/70 z-10"}
+                  `}
+                >
+                  {/* COUNTER ROTATED CONTENT */}
+                  <div
+                    className="text-center px-4"
+                    style={{ transform: `rotate(${-rotation}deg)` }}
+                  >
+                    {/* 🔗 TEXT CLICK = NAVIGATION */}
+                    <p
+                      onClick={() => handleTextClick(circle.link)}
+                      className="text-lg font-medium text-black cursor-pointer"
+                    >
+                      {circle.label}
+                    </p>
 
-          <img
-            src="https://windowpassions.com/wp-content/uploads/2025/01/13-1024x683.webp"
-            className="reveal opacity-0 animate-image-reveal w-[480px] justify-self-end mt-10"
-            alt=""
-          />
+                    {/* 🔁 ARROW CLICK = ROTATION ONLY */}
+                    {isActive && (
+                      <button
+                        onClick={nextCircle}
+                        className="mt-4 w-10 h-10 rounded-full border-2 border-black
+                                   flex items-center justify-center mx-auto
+                                   transition-transform duration-300 active:rotate-45"
+                        aria-label="Next section"
+                      >
+                        →
+                      </button>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+      </div>
+      {/* TOP TAGLINE BOXES */}
+      <section className="w-full bg-[#f6f1ec] pt-10 pb-20 px-6 md:px-20">
+        <div className="max-w-7xl mx-auto">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
+
+            {/* TAG 1 */}
+            <div>
+              <div className="bg-black text-white py-3 px-4 text-sm tracking-widest">
+                ZYNNA
+              </div>
+              <p className="mt-2 text-xs text-black">
+                Tagline
+              </p>
+            </div>
+
+            {/* TAG 2 */}
+            <div>
+              <div className="bg-black text-white py-3 px-4 text-sm tracking-widest">
+                ZYNNA TEXTILE
+              </div>
+              <p className="mt-2 text-xs text-black">
+                Tagline
+              </p>
+            </div>
+
+            {/* TAG 3 */}
+            <div>
+              <div className="bg-black text-white py-3 px-4 text-sm tracking-widest">
+                ZYNNA HOMES
+              </div>
+              <p className="mt-2 text-xs text-black">
+                Tagline
+              </p>
+            </div>
+
+            {/* TAG 4 */}
+            <div>
+              <div className="bg-black text-white py-3 px-4 text-sm tracking-widest">
+                RSD
+              </div>
+              <p className="mt-2 text-xs text-black">
+                Tagline
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* ================= LET'S WORK TOGETHER ================= */}
-      <section className="relative bg-black min-h-screen flex items-center overflow-hidden">
+      {/* OUR CURRENT PROJECT SECTION */}
+      <section className="w-full bg-[#f6f1ec] py-20 px-6 md:px-20">
+        <div className="max-w-7xl mx-auto">
 
-        <div className="reveal opacity-0 animate-fade-up absolute left-[38%] top-1/2 -translate-y-1/2
-                        w-[280px] h-[420px] bg-gradient-to-b from-[#3b2722] to-[#241613]
-                        [clip-path:polygon(50%_0%,100%_20%,100%_100%,0%_100%,0%_20%)]" />
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl font-serif text-black mb-16">
+            Our Current Project
+          </h2>
 
-        <div className="absolute left-[52%] top-1/2 -translate-y-1/2">
-          <h1 className="reveal opacity-0 animate-zoom-in text-white font-light leading-tight
-                         text-6xl md:text-7xl lg:text-8xl">
-            Let’s work <br />
-            together
-          </h1>
+          {/* TOP 3 PROJECTS */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+
+            {/* Project 1 */}
+            <div className="flex flex-col items-start">
+              <div className="w-full h-[320px] border-[6px] border-black"></div>
+              <p className="mt-4 text-sm text-black">
+                DLF PHASE 2 (Gurugram) <br /> (ONLY SITE NAME)
+              </p>
+            </div>
+
+            {/* Project 2 */}
+            <div className="flex flex-col items-start">
+              <div className="w-full h-[320px] border-[6px] border-black"></div>
+              <p className="mt-4 text-sm text-black">
+                Delhi (NCR)
+              </p>
+            </div>
+
+            {/* Project 3 */}
+            <div className="flex flex-col items-start">
+              <div className="w-full h-[320px] border-[6px] border-black"></div>
+              <p className="mt-4 text-sm text-black">
+                MUMBAI
+              </p>
+            </div>
+
+          </div>
+
+          {/* LARGE BOTTOM PROJECT */}
+          <div className="max-w-3xl">
+            <div className="w-full h-[380px] border-[6px] border-black"></div>
+            <p className="mt-4 text-sm text-black">
+              Delhi (NCR)
+            </p>
+          </div>
+
         </div>
-
       </section>
-    </>
+
+    </section>
+
   );
 };
 

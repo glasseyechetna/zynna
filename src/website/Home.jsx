@@ -1,4 +1,4 @@
-import Banner from "./home/Banner";
+import Banner from "../component/Banner";
 import Content from "./home/Content";
 
 

@@ -1,146 +1,174 @@
 import React from "react";
-import { Phone, Mail } from "lucide-react";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaWhatsapp,
+  FaLinkedinIn,
+  FaPhoneAlt,
+} from "react-icons/fa";
+
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-    { label: "Projects", href: "/projects" },
-    { label: "Studio", href: "/studio" },
-  ];
-
-  const socialLinks = [
-    { label: "Instagram", href: "https://www.instagram.com/" },
-    { label: "Behance", href: "https://www.behance.net/" },
-    { label: "Pinterest", href: "https://www.pinterest.com/" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/" },
-    { label: "Are.na", href: "https://www.are.na/" },
-    { label: "Client Inquiries", href: "/contact" },
-  ];
-
   return (
-    <footer className="bg-black text-white">
-      {/* Main footer content */}
-      <div className="px-6 md:px-16 pb-10">
-        <div className="grid grid-cols-12 gap-10 items-start">
+    <>
+    <section className="w-full bg-[#f6f2ee] py-16">
+  <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT NAV */}
-          <div className="col-span-12 md:col-span-3">
-            <nav className="space-y-1 text-center md:text-left">
-              {navLinks.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="
-                    block
-                    text-[28px]
-                    sm:text-[32px]
-                    md:text-[44px]
-                    leading-[1.05]
-                    font-semibold
-                    text-white/75
-                    hover:text-white
-                    transition
-                  "
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
+    {/* LEFT – CLIPBOARD VISUAL */}
+    <div className="flex justify-center">
+      <div className="relative w-64 h-80 bg-black rounded-lg flex flex-col justify-center px-8">
 
-          {/* MIDDLE TEXT */}
-          <div className="col-span-12 md:col-span-5 md:col-start-5">
-            <p className="
-              max-w-[560px]
-              text-[16px]
-              sm:text-[18px]
-              md:text-[20px]
-              leading-snug
-              text-white/90
-              text-center
-              md:text-left
-            ">
-              Blending traditional craftsmanship with modern aesthetics to create
-              unique window dressings. We redefine elegance with each design,
-              integrating luxury with functionality.
-            </p>
-          </div>
+        {/* CLIP */}
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-24 h-10 bg-black rounded-t-xl"></div>
 
-          {/* RIGHT CONTACT */}
-          <div className="col-span-12 md:col-span-3 md:col-start-10">
-            <div className="
-              text-[16px]
-              sm:text-[17px]
-              md:text-[18px]
-              leading-snug
-              text-white/90
-              text-center
-              md:text-right
-            ">
-              <p>2nd Floor, 348 D,</p>
-              <p>Mehrauli-Gurgaon Rd,</p>
-              <p>Sultanpur, New Delhi,</p>
-              <p>Delhi 110030</p>
-            </div>
-
-            <div className="mt-8 md:mt-10 space-y-4">
-              <div className="flex items-center justify-center md:justify-end gap-4">
-                <Phone className="h-6 w-6 text-white/85" />
-                <a
-                  href="tel:+917303660071"
-                  className="text-[18px] sm:text-[20px] md:text-[22px] text-white/90 hover:text-white transition"
-                >
-                  +91 73036 60071
-                </a>
+        {/* CHECKLIST */}
+        <div className="space-y-6">
+          {[1, 2, 3].map((item) => (
+            <div key={item} className="flex items-center gap-4">
+              <div className="w-6 h-6 border-2 border-white flex items-center justify-center">
+                <div className="w-3 h-3 bg-white"></div>
               </div>
-
-              <div className="flex items-center justify-center md:justify-end gap-4">
-                <Mail className="h-6 w-6 text-white/85" />
-                <a
-                  href="mailto:contact@windowpassions.com"
-                  className="text-[18px] sm:text-[20px] md:text-[22px] text-white/90 hover:text-white transition"
-                >
-                  contact@windowpassions.com
-                </a>
-              </div>
+              <div className="h-1 w-32 bg-white/80"></div>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* DIVIDER */}
-        <div className="mt-12 border-t border-white/10" />
+        {/* PERSON ICON */}
+        <div className="absolute bottom-6 right-6">
+          <div className="w-10 h-10 bg-white rounded-full mb-2"></div>
+          <div className="w-14 h-6 bg-white rounded-full"></div>
+        </div>
+      </div>
+    </div>
 
-        {/* BOTTOM BAR */}
-        <div className="
-          flex
-          flex-col
-          md:flex-row
-          items-center
-          md:items-center
-          justify-between
-          gap-6
-          pt-8
-        ">
-          <div className="text-white/60 text-[14px] sm:text-[15px] md:text-[16px] text-center md:text-left">
-            Window Passions © 2025
+    {/* RIGHT – FORM */}
+    <div>
+      <h2 className="text-3xl font-semibold mb-3 text-black">
+        Have a Query?
+      </h2>
+      <p className="text-black/70 mb-8">
+        Share your requirements and our team will get back to you shortly.
+      </p>
+
+      <form className="space-y-5">
+        <input
+          type="text"
+          placeholder="Full Name"
+          className="w-full placeholder-gray-400 text-black border border-black/20 px-4 py-3 bg-transparent focus:outline-none"
+        />
+
+        <input
+          type="email"
+          placeholder="Email Address"
+          className="w-full placeholder-gray-400 text-black border border-black/20 px-4 py-3 bg-transparent focus:outline-none"
+        />
+
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          className="w-full placeholder-gray-400 text-black border border-black/20 px-4 py-3 bg-transparent focus:outline-none"
+        />
+
+        <textarea
+          placeholder="Your Query"
+          rows="4"
+          className="w-full placeholder-gray-400 text-black border border-black/20 px-4 py-3 bg-transparent focus:outline-none"
+        />
+
+        <button
+          type="submit"
+          className="bg-black text-white px-8 py-3 mt-2 hover:bg-black/90 transition"
+        >
+          Submit Query
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+    <footer className="w-full bg-black text-white">
+      {/* TOP FOOTER */}
+      <div
+        className="max-w-7xl mx-auto px-6 py-16 md:py-20
+                   grid grid-cols-1 md:grid-cols-3 gap-12 items-start"
+      >
+        {/* LEFT NAVIGATION */}
+        <nav
+          aria-label="Footer Navigation"
+          className="font-serif space-y-4 text-left
+                     text-3xl sm:text-4xl md:text-5xl leading-tight"
+        >
+          <a href="/" className="block hover:opacity-70">HOME</a>
+          <a href="/foundation" className="block hover:opacity-70">The Foundation</a>
+          <a href="/studio" className="block hover:opacity-70">The Studio</a>
+          <a href="/art-and-craft" className="block hover:opacity-70">Art and Craft</a>
+          <a href="/find-us" className="block hover:opacity-70">Find Us</a>
+        </nav>
+
+        {/* CENTER EMPTY SPACE — DESKTOP ONLY */}
+        <div className="hidden md:block" />
+
+        {/* RIGHT CONTACT INFO */}
+        <address
+          className="not-italic flex flex-col
+             text-left text-lg sm:text-2xl"
+        >
+          {/* TEXT ABOVE */}
+          <div className="space-y-5">
+            <p className="leading-snug">
+              S-56/20, DLF Phase-III<br />
+              Gurgaon, India-122002
+            </p>
+
+            <div className="space-y-1">
+              <p className="opacity-70">Email Address</p>
+              <a
+                href="mailto:admin@zynna.in"
+                className="hover:underline block"
+              >
+                <span>admin@zynna.in</span>
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center md:justify-end">
-            {socialLinks.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold text-white/85 hover:text-white transition"
-              >
-                {item.label}
-              </a>
-            ))}
+          {/* PHONE — CLOSE & NATURAL GAP */}
+          <a
+            href="tel:+918800361361"
+            className="flex items-center gap-3 mt-4 hover:underline"
+            aria-label="Call Zynna"
+          >
+            <FaPhoneAlt className="text-xl" />
+            <span>8800361361</span>
+          </a>
+        </address>
+
+      </div>
+
+      {/* BOTTOM BAR — WHITE BG, BLACK TEXT */}
+      <div className="bg-white border-t border-black/20">
+        <div
+          className="max-w-7xl mx-auto px-6 py-6
+                     flex flex-col md:flex-row
+                     items-center justify-between gap-6 text-black"
+        >
+          <p className="text-base opacity-80">
+            zynna.in © 2025
+          </p>
+
+          <div className="flex gap-6 text-3xl" aria-label="Social media links">
+            <a href="#" aria-label="Instagram" className="hover:opacity-60"><FaInstagram /></a>
+            <a href="#" aria-label="Facebook" className="hover:opacity-60"><FaFacebookF /></a>
+            <a href="#" aria-label="WhatsApp" className="hover:opacity-60"><FaWhatsapp /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:opacity-60"><FaLinkedinIn /></a>
+            <a href="#" aria-label="X" className="hover:opacity-60"><FaXTwitter /></a>
           </div>
         </div>
       </div>
+      
     </footer>
+    </>
   );
 };
 
