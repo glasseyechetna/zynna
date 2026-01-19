@@ -8,7 +8,6 @@ const Home = () => {
 
       <>
       <section className="bg-black text-white "></section>
-      <Banner />
       <Content />
       <section />
       </>

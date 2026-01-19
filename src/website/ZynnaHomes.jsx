@@ -7,17 +7,22 @@ const ZynnaHomes = () => {
 
         {/* THE STORIES WE TELL */}
         <div className="mb-24">
-          <h2 className="text-4xl font-serif mb-6">
-            The Stories we tell ........
+          <h2 className="animate-bounce text-4xl font-serif mb-6">
+            The Stories We Tell
           </h2>
 
-          <div className=" p-8 md:p-12">
-            <p className="text-sm text-gray-700 mb-12">
-              Some lines about us..........................
+          <div className="p-8 md:p-12">
+            <p className="animate-pulse text-sm text-gray-700 mb-12 leading-relaxed">
+              Zynna Homes is driven by storytelling through spaces. Each home is
+              envisioned as a narrative—shaped by its surroundings, materials,
+              and the people who inhabit it. Our approach blends thoughtful
+              design, functionality, and refined aesthetics to create homes
+              that feel personal, timeless, and deeply connected to their
+              environment.
             </p>
 
             <div className="flex justify-center">
-              <button className="bg-black text-white text-xs px-6 py-3 tracking-widest uppercase">
+              <button className="animate-bounce bg-black text-white text-xs px-6 py-3 tracking-widest uppercase">
                 Explore More
               </button>
             </div>
@@ -26,36 +31,42 @@ const ZynnaHomes = () => {
 
         {/* CONCEPT */}
         <div className="mb-24">
-          <h2 className="text-4xl font-serif mb-4">
+          <h2 className="animate-bounce text-4xl font-serif mb-4">
             Concept
           </h2>
-          <p className="text-xl font-serif mb-12">
-            Deer Park, Eco , ........
+
+          <p className="animate-pulse text-xl font-serif mb-12">
+            Deer Park • Eco • Contemporary Living
           </p>
 
           {/* Flow Boxes */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
 
-            {/* Box 1 */}
-            <div className="w-40 h-40 border-2 border-black rounded-xl"></div>
+            {/* Concept 1 */}
+            <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
+              Context-driven design inspired by nature and surroundings
+            </div>
 
-            {/* Arrow */}
             <span className="text-3xl rotate-90 md:rotate-0">→</span>
 
-            {/* Box 2 */}
-            <div className="w-40 h-40 border-2 border-black rounded-xl"></div>
+            {/* Concept 2 */}
+            <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
+              Sustainable materials and eco-conscious planning
+            </div>
 
-            {/* Arrow */}
             <span className="text-3xl rotate-90 md:rotate-0">→</span>
 
-            {/* Box 3 */}
-            <div className="w-40 h-40 border-2 border-black rounded-xl"></div>
+            {/* Concept 3 */}
+            <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
+              Balanced architecture with refined interior detailing
+            </div>
 
-            {/* Arrow */}
             <span className="text-3xl rotate-90 md:rotate-0">→</span>
 
-            {/* Box 4 */}
-            <div className="w-40 h-40 border-2 border-black rounded-xl"></div>
+            {/* Concept 4 */}
+            <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
+              Homes designed for comfort, longevity, and lifestyle
+            </div>
 
           </div>
         </div>

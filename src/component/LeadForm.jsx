@@ -8,7 +8,7 @@ const LeadForm = () => {
       {/* FLOATING BUTTON */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-[9999] bg-white text-black px-5 py-3 rounded-full shadow-xl hover:scale-105 transition-all"
+        className="animate-bounce text-[#832a32] fixed bottom-6 right-6 z-[9999] bg-white text-black px-5 py-3 rounded-full shadow-xl hover:scale-105 transition-all"
       >
         Enquire Now
       </button>
@@ -27,12 +27,12 @@ const LeadForm = () => {
             </button>
 
             {/* TITLE */}
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="text-[#832a32] text-2xl font-semibold mb-4">
               Enquire Now
             </h2>
 
             {/* FORM */}
-            <form className="space-y-4">
+            <form className="text-[#832a32]  space-y-4">
               <input
                 type="text"
                 placeholder="Full Name"
@@ -58,7 +58,7 @@ const LeadForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-black text-white py-2 rounded hover:bg-gray-900 transition"
+                className="text-[#832a32] w-full bg-black text-white py-2 rounded hover:bg-gray-900 transition"
               >
                 Submit
               </button>

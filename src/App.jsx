@@ -27,7 +27,7 @@ import ArtAndCraft from "./website/ArtAndCraft";
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-black text-white flex flex-col">
+      <div className="font-poppins min-h-screen bg-black text-white flex flex-col">
         <Header />
         <Banner />
 
