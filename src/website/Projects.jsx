@@ -48,7 +48,7 @@ const Projects = () => {
             <div className="overflow-hidden">
               <img
                 src={project.image}
-                alt={`Zynna bespoke window dressing project in ${project.title}`}
+                alt={`Zynna Bespoke Window Dressing Project in ${project.title}`}
                 className="w-full h-[360px] md:h-[420px] object-cover
                            transition-transform duration-700
                            group-hover:scale-105"

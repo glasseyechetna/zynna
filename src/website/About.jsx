@@ -62,7 +62,7 @@ const About = () => {
           <div className="w-full rounded-xl overflow-hidden animate-pulse">
             <img
               src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767774350/Wp-website-elements-22-1024x487_uycj8m.webp"
-              alt="Zynna legacy of craftsmanship"
+              alt="Zynna Legacy of Craftsmanship"
               className="w-full h-[320px] md:h-[420px] object-cover"
             />
           </div>
@@ -89,7 +89,7 @@ const About = () => {
 
               <img
                 src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767774432/Wp-website-elements-25-1024x1022_h6p0ig.webp"
-                alt="Bespoke window dressings by Zynna"
+                alt="Bespoke Window Dressings by Zynna"
                 className="w-[300px] md:w-[760px] object-contain bg-[#fff6dc]"
               />
             </div>
@@ -127,10 +127,10 @@ const About = () => {
 
             <div className="absolute left-[30%] top-1/2 -translate-y-1/2 text-white/70 font-light leading-tight">
               <div className="animate-bounce text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
-                Let’s work
+                Let’s Work
               </div>
               <div className="italic animate-bounce text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
-                <span className="not-italic">together.↗</span>
+                <span className="not-italic">Together.↗</span>
               </div>
             </div>
 

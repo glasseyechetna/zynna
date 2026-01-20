@@ -8,13 +8,13 @@ const circles = [
   { id: 2, label: "The Studio", link: "/studio" },
   { id: 3, label: "Art and Craft", link: "/art-and-craft" },
 ];
+
 const brandLinks = [
-  { name: "ZYNNA", link: "/zynna" },
-  { name: "ZYNNA TEXTILES", link: "/textiles" },
-  { name: "ZYNNA HOMES", link: "/homes" },
+  { name: "Zynna", link: "/zynna" },
+  { name: "Zynna Textiles", link: "/textiles" },
+  { name: "Zynna Homes", link: "/homes" },
   { name: "RSD", link: "/rsd" },
 ];
-
 
 const Content = () => {
   const [active, setActive] = useState(0);
@@ -49,10 +49,10 @@ const Content = () => {
               of experience across residential, hospitality, and corporate
               spaces.
             </p>
-             
+
             <button className="animate-bounce mt-8 bg-black text-white px-8 py-3 text-sm tracking-wider">
-              <Link to="/studio" >
-              EXPLORE MORE
+              <Link to="/studio">
+                Explore More
               </Link>
             </button>
           </div>
@@ -116,34 +116,32 @@ const Content = () => {
         </div>
       </section>
 
-     
-     {/* BRAND TAGS */}
-<section className="py-16 px-6 md:px-20">
-  <div className="animate-bounce max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
+      {/* BRAND TAGS */}
+      <section className="py-16 px-6 md:px-20">
+        <div className="animate-bounce max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
 
-    {brandLinks.map((item, i) => (
-      <Link
-        key={i}
-        to={item.link}
-        className="group"
-      >
-        <div className="bg-black text-white py-3 px-4 text-sm tracking-widest
-                        transition-all duration-300
-                        group-hover:bg-white group-hover:text-black
-                        group-hover:border group-hover:border-black">
-          {item.name}
+          {brandLinks.map((item, i) => (
+            <Link
+              key={i}
+              to={item.link}
+              className="group"
+            >
+              <div className="bg-black text-white py-3 px-4 text-sm tracking-widest
+                              transition-all duration-300
+                              group-hover:bg-white group-hover:text-black
+                              group-hover:border group-hover:border-black">
+                {item.name}
+              </div>
+
+              <p className="mt-2 text-xs text-black transition-opacity duration-300
+                            group-hover:opacity-70">
+                Bespoke Design & Craft
+              </p>
+            </Link>
+          ))}
+
         </div>
-
-        <p className="mt-2 text-xs text-black transition-opacity duration-300
-                      group-hover:opacity-70">
-          Bespoke Design & Craft
-        </p>
-      </Link>
-    ))}
-
-  </div>
-</section>
-
+      </section>
 
       {/* PROJECTS */}
       <section className="py-24 px-6 md:px-20">

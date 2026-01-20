@@ -18,7 +18,7 @@ const Zynna = () => {
           elevate the space it inhabits.
         </p>
 
-        {/* Bespoke Luxury */}
+        {/* BESPOKE LUXURY */}
         <div className="mb-8">
           <h3 className="animate-pulse font-semibold text-base mb-3">
             Bespoke Luxury
@@ -32,7 +32,7 @@ const Zynna = () => {
           <div className="animate-pulse border-black w-full"></div>
         </div>
 
-        {/* Sales Pitch */}
+        {/* SALES PITCH */}
         <div className="mb-12">
           <h3 className="animate-pulse font-semibold text-base mb-3">
             Sales Pitch
@@ -44,10 +44,10 @@ const Zynna = () => {
             and corporate clients, we combine aesthetics with durability and
             performance.
           </p>
-          <div className="animate-pulse  border-black w-full"></div>
+          <div className="animate-pulse border-black w-full"></div>
         </div>
 
-        {/* Button */}
+        {/* BUTTON */}
         <div className="flex justify-center">
           <button className="animate-bounce bg-black text-white text-xs px-6 py-3 tracking-widest uppercase">
             Explore More
@@ -65,7 +65,7 @@ const Zynna = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
 
-          {/* Hospitality */}
+          {/* HOSPITALITY */}
           <div>
             <h4 className="animate-pulse text-lg mb-6">Hospitality</h4>
             <div className="space-y-4 animate-pulse text-sm text-gray-700">
@@ -77,7 +77,7 @@ const Zynna = () => {
             </div>
           </div>
 
-          {/* Corporate */}
+          {/* CORPORATE */}
           <div>
             <h4 className="animate-pulse text-lg mb-6">Corporate</h4>
             <div className="space-y-4 animate-pulse text-sm text-gray-700">
@@ -89,7 +89,7 @@ const Zynna = () => {
             </div>
           </div>
 
-          {/* Fraternity Patrons */}
+          {/* FRATERNITY PATRONS */}
           <div>
             <h4 className="animate-pulse text-lg mb-6">Fraternity Patrons</h4>
             <div className="space-y-4 animate-pulse text-sm text-gray-700">
@@ -120,7 +120,7 @@ const Zynna = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
-            {/* Design Consult */}
+            {/* DESIGN CONSULT */}
             <div className="flex flex-col items-center">
               <h3 className="animate-pulse text-lg mb-6">Design Consult</h3>
               <p className="animate-pulse text-sm text-gray-700 mb-6 text-center max-w-sm">
@@ -131,7 +131,7 @@ const Zynna = () => {
               <div className="animate-pulse w-full h-[260px] md:h-[360px] border-4 border-black"></div>
             </div>
 
-            {/* Quotation */}
+            {/* QUOTATION */}
             <div className="flex flex-col items-center">
               <h3 className="animate-pulse text-lg mb-6">Quotation</h3>
               <p className="animate-pulse text-sm text-gray-700 mb-6 text-center max-w-sm">

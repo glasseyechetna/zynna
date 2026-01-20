@@ -32,7 +32,7 @@ const LeadForm = () => {
             </h2>
 
             {/* FORM */}
-            <form className="text-[#832a32]  space-y-4">
+            <form className="text-[#832a32] space-y-4">
               <input
                 type="text"
                 placeholder="Full Name"
@@ -58,7 +58,7 @@ const LeadForm = () => {
 
               <button
                 type="submit"
-                className="text-[#832a32] w-full bg-black text-white py-2 rounded hover:bg-gray-900 transition"
+                className="w-full bg-black text-white py-2 rounded hover:bg-gray-900 transition"
               >
                 Submit
               </button>

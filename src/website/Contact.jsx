@@ -8,7 +8,7 @@ const Contact = () => {
         {/* LEFT CONTENT */}
         <div>
           <p className="text-2xl text-gray-400 mb-4">
-            We&apos;re happy to help
+            We&apos;re Happy to Help
           </p>
 
           <h1 className="text-7xl font-light mb-6">

@@ -39,33 +39,33 @@ const ZynnaHomes = () => {
             Deer Park • Eco • Contemporary Living
           </p>
 
-          {/* Flow Boxes */}
+          {/* FLOW BOXES */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
 
-            {/* Concept 1 */}
+            {/* CONCEPT 1 */}
             <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
-              Context-driven design inspired by nature and surroundings
+              Context-Driven Design Inspired by Nature and Surroundings
             </div>
 
             <span className="text-3xl rotate-90 md:rotate-0">→</span>
 
-            {/* Concept 2 */}
+            {/* CONCEPT 2 */}
             <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
-              Sustainable materials and eco-conscious planning
+              Sustainable Materials and Eco-Conscious Planning
             </div>
 
             <span className="text-3xl rotate-90 md:rotate-0">→</span>
 
-            {/* Concept 3 */}
+            {/* CONCEPT 3 */}
             <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
-              Balanced architecture with refined interior detailing
+              Balanced Architecture with Refined Interior Detailing
             </div>
 
             <span className="text-3xl rotate-90 md:rotate-0">→</span>
 
-            {/* Concept 4 */}
+            {/* CONCEPT 4 */}
             <div className="animate-pulse w-40 h-40 border-2 border-black rounded-xl flex items-center justify-center text-center text-sm px-3">
-              Homes designed for comfort, longevity, and lifestyle
+              Homes Designed for Comfort, Longevity, and Lifestyle
             </div>
 
           </div>

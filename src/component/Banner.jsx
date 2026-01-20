@@ -7,8 +7,7 @@ const videos = [
   "https://www.w3schools.com/html/movie.mp4",
   "https://www.w3schools.com/html/mov_bbb.mp4",
   "https://www.w3schools.com/html/movie.mp4",
-  
-]
+];
 
 const Banner = () => {
   const videoRef = useRef(null);
@@ -24,7 +23,7 @@ const Banner = () => {
     const timer = setTimeout(() => {
       video.pause();
       setCurrentIndex((prev) => (prev + 1) % videos.length);
-    }, 5000); // 5 seconds
+    }, 5000); // 5 Seconds
 
     return () => clearTimeout(timer);
   }, [currentIndex]);

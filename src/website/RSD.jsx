@@ -15,7 +15,7 @@ const RSD = () => {
             About RSD
           </h2>
 
-          <div className=" p-8 md:p-12 mb-16">
+          <div className="p-8 md:p-12 mb-16">
             <p className="animate-pulse text-sm text-gray-700 mb-8 leading-relaxed">
               RSD is Zynna’s specialised division focused on cosmetic styling,
               detailing, and execution supervision—created to ensure that design

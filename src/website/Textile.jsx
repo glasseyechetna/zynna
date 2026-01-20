@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const Textile = () => {
   const startY = useRef(0);
   const [rotation, setRotation] = useState(0);
@@ -41,13 +40,11 @@ const Textile = () => {
               brands and refined homegrown labels. Our collections are selected
               for quality, design excellence, and long-lasting performance.
             </p>
-       
-                  
+
             <button className="animate-bounce bg-black text-white text-xs px-6 py-3 tracking-widest uppercase border-2 border-black">
-           <Link to="/studio" >
-              EXPLORE MORE
+              <Link to="/studio">
+                Explore More
               </Link>
-             
             </button>
           </div>
 
@@ -59,7 +56,7 @@ const Textile = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 text-center">
 
-              {/* International Brands */}
+              {/* INTERNATIONAL BRANDS */}
               <div>
                 <h3 className="animate-bounce text-lg mb-6">
                   International Brands <br />
@@ -84,10 +81,10 @@ const Textile = () => {
                 </div>
               </div>
 
-              {/* Home Grown Brands */}
+              {/* HOMEGROWN BRANDS */}
               <div>
                 <h3 className="animate-bounce text-lg mb-6">
-                  Home Grown Brands <br />
+                  Homegrown Brands <br />
                   at Zynna
                 </h3>
 
@@ -118,13 +115,13 @@ const Textile = () => {
       <section className="w-full bg-white text-black px-6 md:px-16 py-24">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-          {/* Direction Arrows */}
+          {/* DIRECTION ARROWS */}
           <div className="flex flex-col items-center md:items-start animate-pulse">
             <span className="text-4xl">↑</span>
             <span className="text-4xl mt-6">↓</span>
           </div>
 
-          {/* Rotating CTA Shape */}
+          {/* ROTATING CTA SHAPE */}
           <div className="flex justify-center">
             <div
               onMouseDown={handleStart}
@@ -141,9 +138,9 @@ const Textile = () => {
               }}
             >
               <p className="font-serif text-lg leading-relaxed">
-                Become our Partner <br />
-                & Sell our brands <br />
-                in your city <br />
+                Become Our Partner <br />
+                & Sell Our Brands <br />
+                in Your City <br />
                 Worldwide
               </p>
             </div>

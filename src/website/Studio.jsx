@@ -9,7 +9,7 @@ const Studio = () => {
       <section className="w-full min-h-screen bg-black flex items-center justify-center px-6">
         <div className="max-w-7xl w-full flex items-center justify-between relative">
 
-          {/* LEFT – Circle */}
+          {/* LEFT – CIRCLE */}
           <div className="relative z-10">
             <div className="relative w-[360px] h-[360px] md:w-[420px] md:h-[420px] rounded-full bg-white">
               <span className="absolute top-[90px] left-[90px] font-serif text-5xl md:text-6xl text-black">
@@ -24,11 +24,11 @@ const Studio = () => {
             </div>
           </div>
 
-          {/* RIGHT – Image */}
+          {/* RIGHT – IMAGE */}
           <div className="relative animate-pulse">
             <img
               src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767773668/Studio-hero-image-940x1024_agxgss.webp"
-              alt="Zynna design studio Gurgaon Delhi"
+              alt="Zynna Design Studio Gurgaon Delhi"
               className="w-[320px] md:w-[420px] lg:w-[680px] object-cover"
             />
           </div>
@@ -43,7 +43,7 @@ const Studio = () => {
           <div className="flex justify-center lg:justify-start animate-pulse">
             <img
               src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767773779/1qw-576x1024_rocaxs.webp"
-              alt="Zynna studio sketches and concepts"
+              alt="Zynna Studio Sketches and Concepts"
               className="w-[300px] sm:w-[360px] md:w-[620px] object-contain"
             />
           </div>
@@ -64,12 +64,12 @@ const Studio = () => {
         <div className="relative animate-pulse">
           <img
             src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767773454/Wp-2_rpxhuf.webp"
-            alt="Curtain detailing and craftsmanship"
+            alt="Curtain Detailing and Craftsmanship"
             className="absolute -left-24 top-10 w-38 md:w-56"
           />
           <img
             src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767773220/wb1_bwyzyd.webp"
-            alt="Studio fabric detailing"
+            alt="Studio Fabric Detailing"
             className="w-[280px] sm:w-[340px] md:w-[500px] object-contain"
           />
         </div>
@@ -81,7 +81,7 @@ const Studio = () => {
 
           <div className="flex flex-col justify-center">
             <h2 className="animate-bounce text-white text-5xl sm:text-6xl md:text-7xl font-light leading-tight tracking-wide">
-              BESPOKE <br /> JOURNEY
+              Bespoke <br /> Journey
             </h2>
 
             <p className="animate-pulse mt-10 max-w-xl text-white/80 text-sm sm:text-base leading-relaxed">
@@ -96,7 +96,7 @@ const Studio = () => {
           <div className="flex justify-center lg:justify-end animate-pulse">
             <img
               src="https://res.cloudinary.com/dp5koojwa/image/upload/v1767773220/wp2_lwuxpv.webp"
-              alt="Bespoke fabric selection at Zynna"
+              alt="Bespoke Fabric Selection at Zynna"
               className="w-[300px] sm:w-[360px] md:w-[620px] object-contain"
             />
           </div>
@@ -205,10 +205,10 @@ const Studio = () => {
 
             <div className="absolute left-[30%] top-1/2 -translate-y-1/2 text-white/70 font-light leading-tight">
               <div className="animate-bounce text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
-                Let’s work
+                Let’s Work
               </div>
               <div className="italic animate-bounce text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
-                <span className="not-italic">together.↗</span>
+                <span className="not-italic">Together.↗</span>
               </div>
             </div>
 

@@ -48,7 +48,7 @@ const Footer = () => {
               Have a Query?
             </h2>
             <p className="animate-pulse text-[#1f1f1f]/70 mb-10">
-              Share your requirements and our team will connect with you.
+              Share Your Requirements and Our Team Will Connect With You.
             </p>
 
             <form className="animate-pulse space-y-6">
@@ -153,7 +153,7 @@ const Footer = () => {
                           flex flex-col md:flex-row
                           items-center justify-between gap-6">
             <p className="text-base text-[#9b9b9b]">
-              zynna.in © 2025
+              Zynna.in © 2025
             </p>
 
             <div className="flex gap-6 text-2xl text-[#1f1f1f]">

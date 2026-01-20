@@ -67,7 +67,7 @@ const ArtAndCraft = () => {
         {/* CLOSING STATEMENT */}
         <div className="max-w-4xl">
           <p className="animate-pulse text-gray-800 text-lg leading-relaxed">
-            At Zynna, art and craft come together to create window dressings that
+            At Zynna, Art and Craft come together to create window dressings that
             do more than complete a space—they define it.
           </p>
         </div>
