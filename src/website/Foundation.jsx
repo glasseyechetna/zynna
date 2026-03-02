@@ -13,63 +13,44 @@ const Foundation = () => {
 
         {/* INTRO */}
         <p className="animate-pulse text-base md:text-lg text-gray-700 max-w-3xl mb-20 leading-relaxed">
-          The foundation of Zynna is built on craftsmanship, experience, and a
-          deeply personalised approach to window dressing. Every design begins
-          with understanding the client’s vision and translating it into
-          refined, functional elegance.
+          The Foundation reflects the essence of Zynna—our vision, values, and design journey.
         </p>
 
         {/* VISION */}
         <div className="mb-20">
           <h2 className="animate-bounce text-2xl md:text-3xl font-serif mb-6">
-            Our Vision
+            Vision
           </h2>
 
           <p className="animate-pulse text-gray-700 max-w-4xl leading-relaxed">
-            We are committed to personalised service, ensuring every client’s
-            vision is beautifully realised through our exquisite collections.
-            Our goal is to create bespoke curtains and window dressings that
-            enhance architecture, elevate interiors, and stand the test of
-            time.
+            We are committed to deeply personalised service, where every client’s vision is carefully understood and beautifully realised through precision, interpretation, and care.
           </p>
         </div>
 
         {/* JOURNEY */}
         <div className="mb-20">
           <h2 className="animate-bounce text-2xl md:text-3xl font-serif mb-6">
-            Our Journey
+            Journey
           </h2>
 
           <p className="animate-pulse text-gray-700 max-w-4xl leading-relaxed">
-            With over three decades of experience in the industry, Zynna’s
-            journey is defined by expertise and evolution. Our skilled artisans
-            and specialists meticulously transform design concepts into
-            expertly crafted curtains and blinds—combining tradition with
-            contemporary techniques.
+            With over three decades of expertise, Zynna has evolved from a craftsmanship-led foundation into a trusted name in bespoke custom curtains.
+            Blending traditional tailoring with contemporary design, we continue to create timeless, made-to-measure window solutions.
           </p>
         </div>
 
         {/* ABOUT US */}
         <div className="mb-24">
           <h2 className="animate-bounce text-2xl md:text-3xl font-serif mb-6">
-            About Zynna
+            About Us
           </h2>
 
           <p className="animate-pulse text-gray-700 max-w-4xl leading-relaxed">
-            Zynna is a luxury curtain and window dressing brand catering to
-            residential, hospitality, and corporate spaces. From premium
-            textiles and bespoke drapery to precise installation, we offer
-            end-to-end solutions rooted in quality, detail, and design
-            integrity.
+            Zynna is a premium custom curtain brand creating made-to-measure curtains, drapes, sheers, and blinds tailored to your space.
+            We combine high-quality fabrics, expert craftsmanship, and seamless installation to deliver elegant and personalised window solutions.
           </p>
         </div>
 
-        {/* CTA */}
-        <div className="flex justify-center">
-          <button className="animate-bounce bg-black text-white text-xs px-8 py-4 tracking-widest uppercase">
-            Contact Us
-          </button>
-        </div>
 
       </div>
 

@@ -16,10 +16,7 @@ const Contact = () => {
           </h1>
 
           <p className="text-gray-300 leading-relaxed max-w-md mb-10">
-            Lorem ipsum dolor sit amet consectetur. Orci sollicitudin viverra
-            mauris ac sed lectus morbi egestas. Urna massa ante in bibendum
-            bibendum urna turpis eu. Eu ac mus at nunc arcu eget sagittis.
-          </p>
+            </p>
 
           {/* ADDRESS */}
           <div className="flex items-start gap-4 mb-6">

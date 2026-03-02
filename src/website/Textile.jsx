@@ -28,24 +28,20 @@ const Textile = () => {
       {/* ZYNNA TEXTILES INTRO */}
       <section className="w-full bg-white text-black px-6 md:px-16 py-24">
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center mb-24">
             <h2 className="animate-bounce text-4xl font-serif mb-6">
               Zynna Textiles
             </h2>
 
             <p className="animate-pulse text-sm text-gray-700 max-w-xl mx-auto mb-12">
-              Zynna Textiles is a curated destination for premium curtain and
-              upholstery fabrics, bringing together internationally acclaimed
-              brands and refined homegrown labels. Our collections are selected
-              for quality, design excellence, and long-lasting performance.
+              Zynna Textiles is a curated destination for premium fabrics,
+              bringing together select international and homegrown brands.
+              Designed for residential, hospitality, and commercial spaces, our
+              collections balance design integrity, material quality, and
+              long-term performance.
             </p>
 
-            <button className="animate-bounce bg-black text-white text-xs px-6 py-3 tracking-widest uppercase border-2 border-black">
-              <Link to="/studio">
-                Explore More
-              </Link>
-            </button>
+
           </div>
 
           {/* ZYNNA BRANDS */}
@@ -55,7 +51,6 @@ const Textile = () => {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 text-center">
-
               {/* INTERNATIONAL BRANDS */}
               <div>
                 <h3 className="animate-bounce text-lg mb-6">
@@ -65,18 +60,20 @@ const Textile = () => {
 
                 <div className="space-y-4 animate-pulse text-sm text-gray-700">
                   <p>
-                    Zynna collaborates with globally renowned fabric houses,
-                    offering premium collections known for innovation, texture,
-                    and timeless design.
+                    Zynna Textiles represents some of the most respected
+                    international textile houses, known globally for their
+                    design heritage, innovation, and quality standards:
                   </p>
-                  <p>
-                    Our international portfolio includes brands trusted by
-                    luxury homes, hospitality spaces, and design professionals
-                    worldwide.
-                  </p>
+
                   <p className="font-medium">
                     Bini, Thevenon, Fabricut, Laguna, Pik, DZ Italia, Linder,
                     Anaasa
+                  </p>
+
+                  <p>
+                    These brands bring global design sensibilities and technical
+                    expertise, offering fabrics that meet international standards
+                    of quality and performance.
                   </p>
                 </div>
               </div>
@@ -90,31 +87,37 @@ const Textile = () => {
 
                 <div className="space-y-4 animate-pulse text-sm text-gray-700">
                   <p>
-                    Our homegrown brands celebrate craftsmanship, Indian
-                    sensibilities, and contemporary design—crafted to meet
-                    global quality standards.
+                    Alongside international collections, Zynna Textiles proudly
+                    showcases thoughtfully developed homegrown brands that
+                    reflect contemporary design, material honesty, and
+                    craftsmanship:
                   </p>
-                  <p>
-                    These collections offer versatility across residential,
-                    hospitality, and commercial projects.
-                  </p>
+
                   <p className="font-medium">
-                    Rumi Zara, Zynna Pallets, Linen Library, Fabric Library,
+                    Rumi Zara, Zynna Palettes, Linen Library, Fabric Library,
                     Thread Stories, Print Stories
                   </p>
                 </div>
+
               </div>
 
             </div>
-          </div>
 
+          </div>
+          <br />  <br /><br />
+          <h2 className="font-medium text-lg">
+            Partner With Zynna Textiles
+          </h2>
+
+          <p className="text-sm text-gray-700 mt-2">
+            Zynna Textiles offers opportunities to retail and represent our brands worldwide.
+          </p>
         </div>
       </section>
 
       {/* PARTNER CTA */}
       <section className="w-full bg-white text-black px-6 md:px-16 py-24">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-
           {/* DIRECTION ARROWS */}
           <div className="flex flex-col items-center md:items-start animate-pulse">
             <span className="text-4xl">↑</span>
@@ -138,14 +141,13 @@ const Textile = () => {
               }}
             >
               <p className="font-serif text-lg leading-relaxed">
-                Become Our Partner <br />
-                & Sell Our Brands <br />
-                in Your City <br />
+                Partner With Zynna Textiles <br />
+                Retail & Represent <br />
+                Our Brands <br />
                 Worldwide
               </p>
             </div>
           </div>
-
         </div>
       </section>
     </>

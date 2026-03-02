@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const circles = [
   { id: 0, label: "Find Us", link: "/find-us" },
@@ -26,41 +25,40 @@ const Content = () => {
     setRotation((prev) => prev - 90);
   };
 
-  const handleTextClick = (link) => {
-    navigate(link);
-  };
-
   return (
     <section className="w-full bg-[#f6f1ec] overflow-hidden">
 
-      {/* ABOUT SECTION */}
+      {/* ================= ABOUT ================= */}
       <section className="py-20 px-6 md:px-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
 
           {/* LEFT */}
-          <div className="w-full md:w-1/2">
-            <h2 className="animate-bounce text-4xl md:text-5xl font-serif mb-6 text-black">
+          <div className="w-full md:w-1/2 animate-fadeUp">
+
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 text-black animate-textReveal">
               About Us
             </h2>
 
-            <p className="animate-pulse text-gray-800 leading-relaxed max-w-md">
-              Zynna is a luxury curtain and window dressing brand offering
-              bespoke solutions crafted with precision, artistry, and decades
-              of experience across residential, hospitality, and corporate
-              spaces.
+            <p className="text-gray-800 leading-relaxed max-w-md animate-fadeIn">
+              Zynna is a premium custom curtain brand specialising in made-to-measure curtains, drapes, sheers, and blinds designed to elevate every space. We believe that curtains are more than just window coverings. They define light, enhance privacy, and complete the overall aesthetic of a room. That’s why every Zynna creation is thoughtfully crafted using high-quality fabrics, expert stitching, and precise measurements to ensure a flawless finish. From personalised fabric consultation to professional installation, Zynna offers an end-to- end experience focused on craftsmanship, customisation, and timeless design.
+<br /><br /><br />Think Curtains. Think Zynna.
             </p>
 
-            <button className="animate-bounce mt-8 bg-black text-white px-8 py-3 text-sm tracking-wider">
-              <Link to="/studio">
+            <div className="mt-8 animate-scaleIn">
+              <Link
+                to="/studio"
+                className="inline-block bg-black text-white px-8 py-3 text-sm tracking-wider"
+              >
                 Explore More
               </Link>
-            </button>
+            </div>
+
           </div>
 
           {/* RIGHT – ROTATING CIRCLES */}
-          <div className="w-full md:w-1/2 flex justify-center">
+          <div className="w-full md:w-1/2 flex justify-center animate-scaleIn">
             <div
-              className="relative w-[420px] h-[420px] transition-transform duration-700 ease-in-out animate-pulse"
+              className="relative w-[420px] h-[420px] transition-transform duration-700 ease-in-out"
               style={{ transform: `rotate(${rotation}deg)` }}
             >
               {circles.map((circle, index) => {
@@ -76,13 +74,11 @@ const Content = () => {
                 return (
                   <div
                     key={circle.id}
-                    className={`
-                      absolute ${positions[index]}
+                    className={`absolute ${positions[index]}
                       w-[200px] h-[200px]
                       rounded-full border-[4px]
                       flex items-center justify-center
                       transition-all duration-700
-                      animate-pulse
                       ${isActive ? "border-black scale-105 z-20" : "border-black/60 z-10"}
                     `}
                   >
@@ -91,8 +87,8 @@ const Content = () => {
                       style={{ transform: `rotate(${-rotation}deg)` }}
                     >
                       <p
-                        onClick={() => handleTextClick(circle.link)}
-                        className="animate-pulse text-lg font-medium text-black cursor-pointer"
+                        onClick={() => navigate(circle.link)}
+                        className="text-lg font-medium text-black cursor-pointer"
                       >
                         {circle.label}
                       </p>
@@ -100,7 +96,7 @@ const Content = () => {
                       {isActive && (
                         <button
                           onClick={nextCircle}
-                          className="animate-bounce mt-4 w-10 h-10 rounded-full border-2 border-black
+                          className="mt-4 w-10 h-10 rounded-full border-2 border-black
                                      flex items-center justify-center mx-auto"
                         >
                           →
@@ -116,15 +112,16 @@ const Content = () => {
         </div>
       </section>
 
-      {/* BRAND TAGS */}
+      {/* ================= BRANDS ================= */}
       <section className="py-16 px-6 md:px-20">
-        <div className="animate-bounce max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
 
           {brandLinks.map((item, i) => (
             <Link
               key={i}
               to={item.link}
-              className="group"
+              className="group animate-softRise"
+              style={{ animationDelay: `${i * 120}ms` }}
             >
               <div className="bg-black text-white py-3 px-4 text-sm tracking-widest
                               transition-all duration-300
@@ -133,8 +130,7 @@ const Content = () => {
                 {item.name}
               </div>
 
-              <p className="mt-2 text-xs text-black transition-opacity duration-300
-                            group-hover:opacity-70">
+              <p className="mt-2 text-xs text-black group-hover:opacity-70 transition-opacity">
                 Bespoke Design & Craft
               </p>
             </Link>
@@ -143,30 +139,30 @@ const Content = () => {
         </div>
       </section>
 
-      {/* PROJECTS */}
+      {/* ================= PROJECTS ================= */}
       <section className="py-24 px-6 md:px-20">
         <div className="max-w-7xl mx-auto">
 
-          <h2 className="animate-bounce text-4xl md:text-5xl font-serif text-black mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif text-black mb-16 animate-textReveal">
             Our Current Projects
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
             {["DLF Phase 2 – Gurugram", "Delhi NCR", "Mumbai"].map((site, i) => (
-              <div key={i} className="flex flex-col items-start">
-                <div className="animate-pulse w-full h-[320px] border-[6px] border-black"></div>
-                <p className="animate-pulse mt-4 text-sm text-black">
-                  {site}
-                </p>
+              <div
+                key={i}
+                className="animate-softRise"
+                style={{ animationDelay: `${i * 150}ms` }}
+              >
+                <div className="w-full h-[320px] border-[6px] border-black"></div>
+                <p className="mt-4 text-sm text-black">{site}</p>
               </div>
             ))}
           </div>
 
-          <div className="max-w-3xl">
-            <div className="animate-pulse w-full h-[380px] border-[6px] border-black"></div>
-            <p className="animate-pulse mt-4 text-sm text-black">
-              Delhi NCR
-            </p>
+          <div className="max-w-3xl animate-softRise" style={{ animationDelay: "450ms" }}>
+            <div className="w-full h-[380px] border-[6px] border-black"></div>
+            <p className="mt-4 text-sm text-black">Delhi NCR</p>
           </div>
 
         </div>

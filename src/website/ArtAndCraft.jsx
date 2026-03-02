@@ -13,10 +13,9 @@ const ArtAndCraft = () => {
 
         {/* INTRO */}
         <p className="animate-pulse text-base md:text-lg text-gray-700 max-w-3xl mb-16 leading-relaxed">
-          At Zynna, it’s not just about buying a fabric and making curtains.
-          Draperies are treated as pieces of art—crafted with intention,
-          proportion, and an eye for detail that elevates both space and
-          experience.
+         At Zynna, every curtain is crafted as a functional work of art, blending elegance with precision.
+Through thoughtful fabric selection, perfect fall, and expert craftsmanship, we create bespoke curtains that feel timeless and refined.
+
         </p>
 
         {/* CONTENT BLOCK 1 */}
