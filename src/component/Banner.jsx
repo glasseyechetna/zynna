@@ -5,8 +5,6 @@ const videos = [
   "https://www.w3schools.com/html/movie.mp4",
   "https://www.w3schools.com/html/mov_bbb.mp4",
   "https://www.w3schools.com/html/movie.mp4",
-  "https://www.w3schools.com/html/mov_bbb.mp4",
-  "https://www.w3schools.com/html/movie.mp4",
 ];
 
 const Banner = () => {
@@ -18,23 +16,35 @@ const Banner = () => {
     if (!video) return;
 
     video.currentTime = 0;
-    video.play().catch(() => {});
 
-    const timer = setTimeout(() => {
-      video.pause();
+    const playVideo = async () => {
+      try {
+        await video.play();
+      } catch (e) {}
+    };
+
+    playVideo();
+
+    const handleEnded = () => {
       setCurrentIndex((prev) => (prev + 1) % videos.length);
-    }, 5000); // 5 Seconds
+    };
 
-    return () => clearTimeout(timer);
+    video.addEventListener("ended", handleEnded);
+
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
   }, [currentIndex]);
 
   return (
-    <section className="w-full h-screen bg-black flex items-center justify-center">
-      <div className="w-[920px] h-[520px] flex items-center justify-center">
+    <section className="w-full h-[60vh] sm:h-[65vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
+      <div className="w-full h-full">
         <video
           ref={videoRef}
+          key={currentIndex}
           src={videos[currentIndex]}
           muted
+          autoPlay
           playsInline
           className="w-full h-full object-cover"
         />
