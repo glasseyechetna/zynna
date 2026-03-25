@@ -8,12 +8,10 @@ const ZynnaLoadPage = ({ onFinish }) => {
     "https://res.cloudinary.com/dp5koojwa/image/upload/v1774349304/Classical_Ivory_Royale_ced54w.jpg";
 
   useEffect(() => {
-    // fast white -> black wipe
     const wipeTimer = setTimeout(() => {
       setShowLogo(true);
     }, 380);
 
-    // logo settles, then final pop/zoom out starts
     const popTimer = setTimeout(() => {
       setStartPop(true);
     }, 1750);
@@ -25,19 +23,30 @@ const ZynnaLoadPage = ({ onFinish }) => {
   }, []);
 
   const handleAnimationEnd = (e) => {
-    // remove loader exactly when final pop animation ends
     if (e.animationName === "zynnaLogoPopOut") {
       onFinish();
     }
   };
 
   return (
-    <div className="fixed inset-0 z-[99999] overflow-hidden">
-      {/* white start */}
-      <div className="absolute inset-0 bg-white z-[1]" />
+    <div className="fixed inset-0 z-[99999] overflow-hidden pointer-events-none">
+      {/* actual banner image behind loader */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          backgroundImage: `url(${firstBannerImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
 
-      {/* fast black slide */}
-      <div className="zynna-black absolute inset-0 z-[2]" />
+      {/* black overlay */}
+      <div
+        className={`absolute inset-0 z-[2] zynna-black ${
+          startPop ? "zynna-black-fade" : ""
+        }`}
+      />
 
       {/* logo */}
       {showLogo && (
@@ -60,6 +69,11 @@ const ZynnaLoadPage = ({ onFinish }) => {
           transform: scaleX(0);
           transform-origin: left center;
           animation: zynnaWipe 0.38s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        /* fully reveal banner behind */
+        .zynna-black-fade {
+          animation: zynnaBlackFadeOut 1.15s ease forwards;
         }
 
         .zynna-logo {
@@ -87,20 +101,15 @@ const ZynnaLoadPage = ({ onFinish }) => {
             zynnaFadeIn 0.18s ease forwards,
             zynnaSettle 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
           animation-delay: 0s, 0.18s;
-          will-change: transform, opacity;
         }
 
         .zynna-logo-pop {
-          animation: zynnaLogoPopOut 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+          animation: zynnaLogoPopOut 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
         }
 
         @keyframes zynnaWipe {
-          from {
-            transform: scaleX(0);
-          }
-          to {
-            transform: scaleX(1);
-          }
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
         }
 
         @keyframes zynnaFadeIn {
@@ -116,16 +125,13 @@ const ZynnaLoadPage = ({ onFinish }) => {
 
         @keyframes zynnaSettle {
           from {
-            opacity: 1;
             transform: scale(2.25);
           }
           to {
-            opacity: 1;
             transform: scale(1);
           }
         }
 
-        /* final animation */
         @keyframes zynnaLogoPopOut {
           from {
             opacity: 1;
@@ -133,21 +139,27 @@ const ZynnaLoadPage = ({ onFinish }) => {
           }
           to {
             opacity: 0;
-            transform: scale(3.35);
+            transform: scale(3.2);
           }
+        }
+
+        /* black overlay fully disappears */
+        @keyframes zynnaBlackFadeOut {
+          0% { opacity: 1; }
+          100% { opacity: 0; }
         }
 
         @media (max-width: 768px) {
           .zynna-logo {
-            font-size: clamp(4.6rem, 29vw, 9rem);
+            font-size: clamp(3.8rem, 20vw, 7rem);
             letter-spacing: 0.02em;
-            line-height: 0.92;
+            line-height: 0.9;
           }
         }
 
         @media (max-width: 480px) {
           .zynna-logo {
-            font-size: clamp(4rem, 31vw, 7.2rem);
+            font-size: clamp(3.2rem, 22vw, 6rem);
             letter-spacing: 0.01em;
             line-height: 0.95;
           }
@@ -159,7 +171,7 @@ const ZynnaLoadPage = ({ onFinish }) => {
             }
             to {
               opacity: 0;
-              transform: scale(2.8);
+              transform: scale(2.6);
             }
           }
         }
