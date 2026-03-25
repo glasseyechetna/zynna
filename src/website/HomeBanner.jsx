@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -32,19 +30,26 @@ const bannerImages = [
     title: "Zynna RSD",
     subtitle: "Zynna RSD",
   },
-
 ];
 
-const HomeBanner = () => {
+const HomeBanner = ({ loaderFinished }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
+    if (loaderFinished) {
+      setCurrentSlide(0);
+    }
+  }, [loaderFinished]);
+
+  useEffect(() => {
+    if (!loaderFinished) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [loaderFinished]);
 
   return (
     <section className="w-full h-[100svh] md:h-[500px] lg:h-screen overflow-hidden bg-white">
@@ -54,12 +59,14 @@ const HomeBanner = () => {
             to={item.link}
             key={index}
             className={`absolute inset-0 block transition-opacity duration-700 ease-in-out ${
-              currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              currentSlide === index
+                ? "opacity-100 z-10"
+                : "opacity-0 z-0 pointer-events-none"
             }`}
           >
             <img
               src={item.image}
-              alt={`Banner ${index + 1}`}
+              alt={item.title}
               className="w-full h-full object-cover"
             />
 

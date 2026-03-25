@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -31,37 +31,17 @@ import ArtAndCraft from "./website/ArtAndCraft";
 const AppContent = () => {
   const location = useLocation();
   const isHomeBannerPage = location.pathname === "/";
-  const [showLoader, setShowLoader] = useState(true);
-
-  useEffect(() => {
-    const handleRefresh = () => {
-      sessionStorage.removeItem("zynna_loader_done");
-    };
-
-    window.addEventListener("beforeunload", handleRefresh);
-
-    const alreadyLoaded = sessionStorage.getItem("zynna_loader_done");
-    if (alreadyLoaded) {
-      setShowLoader(false);
-    }
-
-    return () => {
-      window.removeEventListener("beforeunload", handleRefresh);
-    };
-  }, []);
-
-  const handleLoaderFinish = () => {
-    sessionStorage.setItem("zynna_loader_done", "true");
-    setShowLoader(false);
-  };
+  const [showLoader, setShowLoader] = useState(isHomeBannerPage);
 
   return (
     <>
-      {showLoader && <ZynnaLoadPage onFinish={handleLoaderFinish} />}
+      {isHomeBannerPage && showLoader && (
+        <ZynnaLoadPage onFinish={() => setShowLoader(false)} />
+      )}
 
       <div
         className={`font-poppins min-h-screen bg-black text-white flex flex-col ${
-          showLoader ? "h-screen overflow-hidden" : ""
+          isHomeBannerPage && showLoader ? "h-screen overflow-hidden" : ""
         }`}
       >
         {!isHomeBannerPage && <Header />}
@@ -69,7 +49,10 @@ const AppContent = () => {
 
         <main className={`flex-1 ${isHomeBannerPage ? "m-0 p-0" : ""}`}>
           <Routes>
-            <Route path="/" element={<HomeBanner />} />
+            <Route
+              path="/"
+              element={<HomeBanner loaderFinished={!showLoader} />}
+            />
 
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
